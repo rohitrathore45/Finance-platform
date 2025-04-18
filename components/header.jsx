@@ -27,7 +27,7 @@ const Header = async () => {
                     <Link href={"/transaction/create"} className="flex items-center gap-2">
                         <Button>
                             <PenBox size={18}/>
-                            <span className="hidden md:inline">Dashboard</span>
+                            <span className="hidden md:inline">Add Transaction</span>
                         </Button>
                     </Link>
                 </SignedIn>
