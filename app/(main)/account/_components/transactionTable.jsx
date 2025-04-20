@@ -236,7 +236,7 @@ const TransactionTable = ({ transactions }) => {
                     filteredAndSortedTransacctions.map((transaction, index) => (
                     <TableRow key={transaction.id || index}>
                         <TableCell >
-                            <Checkbox onCheckedChange= {() => handleSelect(transaction.id)}  checked={selectedIds.includes}/>
+                            <Checkbox onCheckedChange= {() => handleSelect(transaction.id)}  checked={selectedIds.includes(transaction.id)}/>
                         </TableCell>
                         <TableCell>{format(new Date(transaction.date), "PP")}</TableCell>
                         <TableCell>{transaction.description}</TableCell>
