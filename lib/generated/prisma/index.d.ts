@@ -58,7 +58,8 @@ export const RecurringInterval: {
   DAILY: 'DAILY',
   WEEKLY: 'WEEKLY',
   MONTHLY: 'MONTHLY',
-  YEARLY: 'YEARLY'
+  YEARLY: 'YEARLY',
+  NONE: 'NONE'
 };
 
 export type RecurringInterval = (typeof RecurringInterval)[keyof typeof RecurringInterval]
@@ -3830,7 +3831,7 @@ export namespace Prisma {
     category: string
     receiptUrl: string | null
     isRecurring: boolean
-    recurringInterval: $Enums.RecurringInterval
+    recurringInterval: $Enums.RecurringInterval | null
     nextRecurringDate: Date | null
     lastProcessed: Date | null
     status: $Enums.TransactionStatus
@@ -3970,7 +3971,7 @@ export namespace Prisma {
       category: string
       receiptUrl: string | null
       isRecurring: boolean
-      recurringInterval: $Enums.RecurringInterval
+      recurringInterval: $Enums.RecurringInterval | null
       nextRecurringDate: Date | null
       lastProcessed: Date | null
       status: $Enums.TransactionStatus
@@ -6322,7 +6323,7 @@ export namespace Prisma {
     category?: StringFilter<"Transaction"> | string
     receiptUrl?: StringNullableFilter<"Transaction"> | string | null
     isRecurring?: BoolFilter<"Transaction"> | boolean
-    recurringInterval?: EnumRecurringIntervalFilter<"Transaction"> | $Enums.RecurringInterval
+    recurringInterval?: EnumRecurringIntervalNullableFilter<"Transaction"> | $Enums.RecurringInterval | null
     nextRecurringDate?: DateTimeNullableFilter<"Transaction"> | Date | string | null
     lastProcessed?: DateTimeNullableFilter<"Transaction"> | Date | string | null
     status?: EnumTransactionStatusFilter<"Transaction"> | $Enums.TransactionStatus
@@ -6343,7 +6344,7 @@ export namespace Prisma {
     category?: SortOrder
     receiptUrl?: SortOrderInput | SortOrder
     isRecurring?: SortOrder
-    recurringInterval?: SortOrder
+    recurringInterval?: SortOrderInput | SortOrder
     nextRecurringDate?: SortOrderInput | SortOrder
     lastProcessed?: SortOrderInput | SortOrder
     status?: SortOrder
@@ -6367,7 +6368,7 @@ export namespace Prisma {
     category?: StringFilter<"Transaction"> | string
     receiptUrl?: StringNullableFilter<"Transaction"> | string | null
     isRecurring?: BoolFilter<"Transaction"> | boolean
-    recurringInterval?: EnumRecurringIntervalFilter<"Transaction"> | $Enums.RecurringInterval
+    recurringInterval?: EnumRecurringIntervalNullableFilter<"Transaction"> | $Enums.RecurringInterval | null
     nextRecurringDate?: DateTimeNullableFilter<"Transaction"> | Date | string | null
     lastProcessed?: DateTimeNullableFilter<"Transaction"> | Date | string | null
     status?: EnumTransactionStatusFilter<"Transaction"> | $Enums.TransactionStatus
@@ -6388,7 +6389,7 @@ export namespace Prisma {
     category?: SortOrder
     receiptUrl?: SortOrderInput | SortOrder
     isRecurring?: SortOrder
-    recurringInterval?: SortOrder
+    recurringInterval?: SortOrderInput | SortOrder
     nextRecurringDate?: SortOrderInput | SortOrder
     lastProcessed?: SortOrderInput | SortOrder
     status?: SortOrder
@@ -6415,7 +6416,7 @@ export namespace Prisma {
     category?: StringWithAggregatesFilter<"Transaction"> | string
     receiptUrl?: StringNullableWithAggregatesFilter<"Transaction"> | string | null
     isRecurring?: BoolWithAggregatesFilter<"Transaction"> | boolean
-    recurringInterval?: EnumRecurringIntervalWithAggregatesFilter<"Transaction"> | $Enums.RecurringInterval
+    recurringInterval?: EnumRecurringIntervalNullableWithAggregatesFilter<"Transaction"> | $Enums.RecurringInterval | null
     nextRecurringDate?: DateTimeNullableWithAggregatesFilter<"Transaction"> | Date | string | null
     lastProcessed?: DateTimeNullableWithAggregatesFilter<"Transaction"> | Date | string | null
     status?: EnumTransactionStatusWithAggregatesFilter<"Transaction"> | $Enums.TransactionStatus
@@ -6658,7 +6659,7 @@ export namespace Prisma {
     category: string
     receiptUrl?: string | null
     isRecurring?: boolean
-    recurringInterval: $Enums.RecurringInterval
+    recurringInterval?: $Enums.RecurringInterval | null
     nextRecurringDate?: Date | string | null
     lastProcessed?: Date | string | null
     status?: $Enums.TransactionStatus
@@ -6677,7 +6678,7 @@ export namespace Prisma {
     category: string
     receiptUrl?: string | null
     isRecurring?: boolean
-    recurringInterval: $Enums.RecurringInterval
+    recurringInterval?: $Enums.RecurringInterval | null
     nextRecurringDate?: Date | string | null
     lastProcessed?: Date | string | null
     status?: $Enums.TransactionStatus
@@ -6696,7 +6697,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     receiptUrl?: NullableStringFieldUpdateOperationsInput | string | null
     isRecurring?: BoolFieldUpdateOperationsInput | boolean
-    recurringInterval?: EnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval
+    recurringInterval?: NullableEnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval | null
     nextRecurringDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastProcessed?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
@@ -6715,7 +6716,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     receiptUrl?: NullableStringFieldUpdateOperationsInput | string | null
     isRecurring?: BoolFieldUpdateOperationsInput | boolean
-    recurringInterval?: EnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval
+    recurringInterval?: NullableEnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval | null
     nextRecurringDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastProcessed?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
@@ -6734,7 +6735,7 @@ export namespace Prisma {
     category: string
     receiptUrl?: string | null
     isRecurring?: boolean
-    recurringInterval: $Enums.RecurringInterval
+    recurringInterval?: $Enums.RecurringInterval | null
     nextRecurringDate?: Date | string | null
     lastProcessed?: Date | string | null
     status?: $Enums.TransactionStatus
@@ -6753,7 +6754,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     receiptUrl?: NullableStringFieldUpdateOperationsInput | string | null
     isRecurring?: BoolFieldUpdateOperationsInput | boolean
-    recurringInterval?: EnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval
+    recurringInterval?: NullableEnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval | null
     nextRecurringDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastProcessed?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
@@ -6770,7 +6771,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     receiptUrl?: NullableStringFieldUpdateOperationsInput | string | null
     isRecurring?: BoolFieldUpdateOperationsInput | boolean
-    recurringInterval?: EnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval
+    recurringInterval?: NullableEnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval | null
     nextRecurringDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastProcessed?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
@@ -7108,11 +7109,11 @@ export namespace Prisma {
     not?: NestedEnumTransactionTypeFilter<$PrismaModel> | $Enums.TransactionType
   }
 
-  export type EnumRecurringIntervalFilter<$PrismaModel = never> = {
-    equals?: $Enums.RecurringInterval | EnumRecurringIntervalFieldRefInput<$PrismaModel>
-    in?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel>
-    notIn?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel>
-    not?: NestedEnumRecurringIntervalFilter<$PrismaModel> | $Enums.RecurringInterval
+  export type EnumRecurringIntervalNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.RecurringInterval | EnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    in?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumRecurringIntervalNullableFilter<$PrismaModel> | $Enums.RecurringInterval | null
   }
 
   export type DateTimeNullableFilter<$PrismaModel = never> = {
@@ -7213,14 +7214,14 @@ export namespace Prisma {
     _max?: NestedEnumTransactionTypeFilter<$PrismaModel>
   }
 
-  export type EnumRecurringIntervalWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.RecurringInterval | EnumRecurringIntervalFieldRefInput<$PrismaModel>
-    in?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel>
-    notIn?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel>
-    not?: NestedEnumRecurringIntervalWithAggregatesFilter<$PrismaModel> | $Enums.RecurringInterval
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumRecurringIntervalFilter<$PrismaModel>
-    _max?: NestedEnumRecurringIntervalFilter<$PrismaModel>
+  export type EnumRecurringIntervalNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.RecurringInterval | EnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    in?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumRecurringIntervalNullableWithAggregatesFilter<$PrismaModel> | $Enums.RecurringInterval | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumRecurringIntervalNullableFilter<$PrismaModel>
+    _max?: NestedEnumRecurringIntervalNullableFilter<$PrismaModel>
   }
 
   export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -7508,8 +7509,8 @@ export namespace Prisma {
     set?: $Enums.TransactionType
   }
 
-  export type EnumRecurringIntervalFieldUpdateOperationsInput = {
-    set?: $Enums.RecurringInterval
+  export type NullableEnumRecurringIntervalFieldUpdateOperationsInput = {
+    set?: $Enums.RecurringInterval | null
   }
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
@@ -7723,11 +7724,11 @@ export namespace Prisma {
     not?: NestedEnumTransactionTypeFilter<$PrismaModel> | $Enums.TransactionType
   }
 
-  export type NestedEnumRecurringIntervalFilter<$PrismaModel = never> = {
-    equals?: $Enums.RecurringInterval | EnumRecurringIntervalFieldRefInput<$PrismaModel>
-    in?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel>
-    notIn?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel>
-    not?: NestedEnumRecurringIntervalFilter<$PrismaModel> | $Enums.RecurringInterval
+  export type NestedEnumRecurringIntervalNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.RecurringInterval | EnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    in?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumRecurringIntervalNullableFilter<$PrismaModel> | $Enums.RecurringInterval | null
   }
 
   export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
@@ -7758,14 +7759,14 @@ export namespace Prisma {
     _max?: NestedEnumTransactionTypeFilter<$PrismaModel>
   }
 
-  export type NestedEnumRecurringIntervalWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.RecurringInterval | EnumRecurringIntervalFieldRefInput<$PrismaModel>
-    in?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel>
-    notIn?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel>
-    not?: NestedEnumRecurringIntervalWithAggregatesFilter<$PrismaModel> | $Enums.RecurringInterval
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumRecurringIntervalFilter<$PrismaModel>
-    _max?: NestedEnumRecurringIntervalFilter<$PrismaModel>
+  export type NestedEnumRecurringIntervalNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.RecurringInterval | EnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    in?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.RecurringInterval[] | ListEnumRecurringIntervalFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumRecurringIntervalNullableWithAggregatesFilter<$PrismaModel> | $Enums.RecurringInterval | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumRecurringIntervalNullableFilter<$PrismaModel>
+    _max?: NestedEnumRecurringIntervalNullableFilter<$PrismaModel>
   }
 
   export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -7801,7 +7802,7 @@ export namespace Prisma {
     category: string
     receiptUrl?: string | null
     isRecurring?: boolean
-    recurringInterval: $Enums.RecurringInterval
+    recurringInterval?: $Enums.RecurringInterval | null
     nextRecurringDate?: Date | string | null
     lastProcessed?: Date | string | null
     status?: $Enums.TransactionStatus
@@ -7819,7 +7820,7 @@ export namespace Prisma {
     category: string
     receiptUrl?: string | null
     isRecurring?: boolean
-    recurringInterval: $Enums.RecurringInterval
+    recurringInterval?: $Enums.RecurringInterval | null
     nextRecurringDate?: Date | string | null
     lastProcessed?: Date | string | null
     status?: $Enums.TransactionStatus
@@ -7924,7 +7925,7 @@ export namespace Prisma {
     category?: StringFilter<"Transaction"> | string
     receiptUrl?: StringNullableFilter<"Transaction"> | string | null
     isRecurring?: BoolFilter<"Transaction"> | boolean
-    recurringInterval?: EnumRecurringIntervalFilter<"Transaction"> | $Enums.RecurringInterval
+    recurringInterval?: EnumRecurringIntervalNullableFilter<"Transaction"> | $Enums.RecurringInterval | null
     nextRecurringDate?: DateTimeNullableFilter<"Transaction"> | Date | string | null
     lastProcessed?: DateTimeNullableFilter<"Transaction"> | Date | string | null
     status?: EnumTransactionStatusFilter<"Transaction"> | $Enums.TransactionStatus
@@ -8030,7 +8031,7 @@ export namespace Prisma {
     category: string
     receiptUrl?: string | null
     isRecurring?: boolean
-    recurringInterval: $Enums.RecurringInterval
+    recurringInterval?: $Enums.RecurringInterval | null
     nextRecurringDate?: Date | string | null
     lastProcessed?: Date | string | null
     status?: $Enums.TransactionStatus
@@ -8048,7 +8049,7 @@ export namespace Prisma {
     category: string
     receiptUrl?: string | null
     isRecurring?: boolean
-    recurringInterval: $Enums.RecurringInterval
+    recurringInterval?: $Enums.RecurringInterval | null
     nextRecurringDate?: Date | string | null
     lastProcessed?: Date | string | null
     status?: $Enums.TransactionStatus
@@ -8315,7 +8316,7 @@ export namespace Prisma {
     category: string
     receiptUrl?: string | null
     isRecurring?: boolean
-    recurringInterval: $Enums.RecurringInterval
+    recurringInterval?: $Enums.RecurringInterval | null
     nextRecurringDate?: Date | string | null
     lastProcessed?: Date | string | null
     status?: $Enums.TransactionStatus
@@ -8351,7 +8352,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     receiptUrl?: NullableStringFieldUpdateOperationsInput | string | null
     isRecurring?: BoolFieldUpdateOperationsInput | boolean
-    recurringInterval?: EnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval
+    recurringInterval?: NullableEnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval | null
     nextRecurringDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastProcessed?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
@@ -8369,7 +8370,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     receiptUrl?: NullableStringFieldUpdateOperationsInput | string | null
     isRecurring?: BoolFieldUpdateOperationsInput | boolean
-    recurringInterval?: EnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval
+    recurringInterval?: NullableEnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval | null
     nextRecurringDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastProcessed?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
@@ -8387,7 +8388,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     receiptUrl?: NullableStringFieldUpdateOperationsInput | string | null
     isRecurring?: BoolFieldUpdateOperationsInput | boolean
-    recurringInterval?: EnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval
+    recurringInterval?: NullableEnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval | null
     nextRecurringDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastProcessed?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
@@ -8461,7 +8462,7 @@ export namespace Prisma {
     category: string
     receiptUrl?: string | null
     isRecurring?: boolean
-    recurringInterval: $Enums.RecurringInterval
+    recurringInterval?: $Enums.RecurringInterval | null
     nextRecurringDate?: Date | string | null
     lastProcessed?: Date | string | null
     status?: $Enums.TransactionStatus
@@ -8479,7 +8480,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     receiptUrl?: NullableStringFieldUpdateOperationsInput | string | null
     isRecurring?: BoolFieldUpdateOperationsInput | boolean
-    recurringInterval?: EnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval
+    recurringInterval?: NullableEnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval | null
     nextRecurringDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastProcessed?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
@@ -8497,7 +8498,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     receiptUrl?: NullableStringFieldUpdateOperationsInput | string | null
     isRecurring?: BoolFieldUpdateOperationsInput | boolean
-    recurringInterval?: EnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval
+    recurringInterval?: NullableEnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval | null
     nextRecurringDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastProcessed?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
@@ -8515,7 +8516,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     receiptUrl?: NullableStringFieldUpdateOperationsInput | string | null
     isRecurring?: BoolFieldUpdateOperationsInput | boolean
-    recurringInterval?: EnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval
+    recurringInterval?: NullableEnumRecurringIntervalFieldUpdateOperationsInput | $Enums.RecurringInterval | null
     nextRecurringDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     lastProcessed?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus

@@ -46,24 +46,24 @@ enum AccountType {
 }
 
 model Transaction {
-  id                String            @id @default(uuid())
+  id                String             @id @default(uuid())
   type              TransactionType
   amount            Decimal
   description       String?
   date              DateTime
   category          String
   receiptUrl        String?
-  isRecurring       Boolean           @default(false)
-  recurringInterval RecurringInterval //only used if recurring is true
+  isRecurring       Boolean            @default(false)
+  recurringInterval RecurringInterval? //only used if recurring is true
   nextRecurringDate DateTime? //next date for recurring transaction
   lastProcessed     DateTime? //last time this recurring was processed
-  status            TransactionStatus @default(COMPLETED)
+  status            TransactionStatus  @default(COMPLETED)
   userId            String
-  user              User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User               @relation(fields: [userId], references: [id], onDelete: Cascade)
   accountId         String
-  account           Account           @relation(fields: [accountId], references: [id], onDelete: Cascade)
-  createdAt         DateTime          @default(now())
-  updatedAt         DateTime          @updatedAt
+  account           Account            @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
 
   @@index([userId])
   @@index([accountId])
@@ -80,6 +80,7 @@ enum RecurringInterval {
   WEEKLY
   MONTHLY
   YEARLY
+  NONE
 }
 
 enum TransactionStatus {

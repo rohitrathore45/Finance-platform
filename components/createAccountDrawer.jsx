@@ -80,7 +80,7 @@ const CreateAccountDrawer = ({ children }) => {
                         {errors.balance && (<p className='text-sm text-red-500'>{errors.balance.message}</p>)}
                     </div>
                     <div className='flex items-center justify-between rounded-lg border p-3'>
-                        <div>
+                        <div className='space-y-0.5'>
                             <label htmlFor='isDefault' className='text-sm font-medium cursor-pointer'>Set as Default</label>
                             <p className='text-sm text-muted-foreground'>This account will be selected default for transactions</p>
                         </div>
