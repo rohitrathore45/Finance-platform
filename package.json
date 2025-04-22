@@ -7,13 +7,15 @@
     "email": "email dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@arcjet/next": "^1.0.0-beta.6",
     "@bufbuild/protobuf": "^2.2.5",
     "@clerk/nextjs": "^6.9.0",
     "@connectrpc/connect": "^2.0.2",
+    "@google/generative-ai": "^0.24.0",
     "@hookform/resolvers": "^5.0.1",
     "@prisma/client": "^6.6.0",
     "@radix-ui/react-checkbox": "^1.1.5",
