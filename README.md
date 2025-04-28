@@ -50,7 +50,7 @@ ________________________________________________________________________________
 
 📦 Installation (For Developers)
 # Clone the repo
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/rohitrathore45/Finance-platform
 cd your-repo-name
 
 # Install dependencies
